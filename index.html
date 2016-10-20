@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="robots" content="index,follow">
+
+	<title>kimaker_puzzle_gthb</title>
+
+	<link type="text/css" rel="stylesheet" media="all" href="css/main.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.BackgroundPuzzle.js"></script>
+</head>
+
+<body class="start js-middle">
+<h1 data-counter="0">kimaker_puzzle_gthb. Click me!</h1>
+
+
+<div id="puzzle" class="bg-puzzle-wrapper collect">
+	<div class="bg-puzzle bg-puzzle_puzz-1-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-2-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-3-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-4-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-5-le"></div>
+	<div class="bg-puzzle_clear"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-6-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-7-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-8-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-9-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-10-le"></div>
+	<div class="bg-puzzle_clear"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-11-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-12-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-13-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-14-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-15-le"></div>
+	<div class="bg-puzzle_clear"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-16-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-17-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-18-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-19-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-20-le"></div>
+	<div class="bg-puzzle_clear"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-21-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-22-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-23-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-24-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-25-le"></div>
+	<div class="bg-puzzle_clear"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-26-le"></div>
+	<div class="bg-puzzle bg-puzzle_puzz-27-le"></div>
+</div>
+
+<footer></footer>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$("#puzzle").bgPuzzle("init",{"filling" : false,"cloning" : 0, "test" : 0, "position" : ['63%','50%']});
+
+		$("body").on("click",function(){
+			$(this).toggleClass("js-middle");
+			$cnob = $("h1");
+			$counter = $cnob.data("counter");
+			if( $counter % 2 == 0 ) {
+				$("#puzzle").bgPuzzle("collect");
+			}
+			else {
+				$("#puzzle").bgPuzzle("uncollect",{"filling" : false,"cloning" : 0, "test" : 0, "position" : ['63%','50%']});
+			}
+			$cnob.data("counter",$counter*1+1*1);
+		});
+	});
+</script>
+</body>
+
+</html>
